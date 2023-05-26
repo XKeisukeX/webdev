@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+     <div class="login-container">
+    <div class="adjust">
+    <h2 id="login-text">Login</h2>
+    <form onsubmit="return validateForm(event)" action="dashboard.html">
+      <input type="email" id="email" name="email" placeholder="Email" required><br>
+      <input type="password" id="password" name="password" placeholder="Password" required><br>
+      <input type="submit" id="login-button" value="Log In">
+    </form>
+</div>
+  </div>
+
+  <div  id="message-container" style="display: none;">
+    <section id="home">
+      <div class="hero-title">
+       <h2>Welcome To <span>Hack Site</span></h2>
+       <p>"Hacksite: Unraveling the World of Cyber Intrusion. Dive into the dark underbelly of hacking culture as we explore the techniques, tools, and motivations behind these illicit activities. From phishing scams to DDoS attacks, discover the secrets of the hackers and learn how to protect yourself online."</p>
+       <div class="visit">
+         <a href="https://www.hackthissite.org/">
+         <button>Visit</button>
+       </a>
+       </div>
+ </div>
+ <div class="footer">
+  <h6>Created by @JMDepaclayon</h6>
+  <h6>2023/2024</h6>
+ </div>
+</section>
+  </div>
+
+
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      if (email === "johnmark@gmail.com" && password === "johnmark") {
+        document.getElementById("message-container").style.display = "block";
+        document.getElementById("email").classList.add("hide");
+        document.getElementById("password").classList.add("hide");
+        document.getElementById("login-text").classList.add("hide");
+        document.getElementById("login-button").classList.add("hide");
+        return true; // Allow form submission
+      } else {
+        alert("HOY!! Ito ang e Type mo Email: johnmark@gmail.com / Password: johnmark ( Pagka Login mo Click mo yung Visit )");
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</body>
+</html> 
